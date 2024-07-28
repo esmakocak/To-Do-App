@@ -14,6 +14,7 @@ struct SmallAddButton: View {
                 .fill(
                     LinearGradient(gradient: Gradient(colors: [Color("AccentColor"), Color("secondary")]), startPoint: .leading, endPoint: .trailing)
                 )
+                .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
         
             Image(systemName: "plus")
                 .foregroundColor(.white)

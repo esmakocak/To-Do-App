@@ -11,6 +11,7 @@ struct TasksView: View {
     var body: some View {
             VStack {
                 Text("My tasks")
+                    .foregroundColor(.white)
                     .font(.title2).bold()
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4059A2322C56CD2F00350757 /* SmallAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059A2312C56CD2E00350757 /* SmallAddButton.swift */; };
 		4065CA7C2C56786C00957229 /* ToDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065CA7B2C56786C00957229 /* ToDoApp.swift */; };
 		4065CA7E2C56786C00957229 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065CA7D2C56786C00957229 /* ContentView.swift */; };
 		4065CA802C56786F00957229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4065CA7F2C56786F00957229 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4059A2312C56CD2E00350757 /* SmallAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallAddButton.swift; sourceTree = "<group>"; };
 		4065CA782C56786C00957229 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4065CA7B2C56786C00957229 /* ToDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoApp.swift; sourceTree = "<group>"; };
 		4065CA7D2C56786C00957229 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				4065CA8D2C56BCDA00957229 /* TaskRow.swift */,
+				4059A2312C56CD2E00350757 /* SmallAddButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				4065CA7E2C56786C00957229 /* ContentView.swift in Sources */,
 				4065CA902C56BFF200957229 /* AddTaskView.swift in Sources */,
 				4065CA8B2C5678CB00957229 /* TasksView.swift in Sources */,
+				4059A2322C56CD2F00350757 /* SmallAddButton.swift in Sources */,
 				4065CA7C2C56786C00957229 /* ToDoApp.swift in Sources */,
 				4065CA8E2C56BCDA00957229 /* TaskRow.swift in Sources */,
 			);
@@ -308,6 +312,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,6 +342,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

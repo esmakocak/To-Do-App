@@ -9,10 +9,12 @@ import SwiftUI
 
 struct AddTaskView: View {
     @State private var title: String = ""
-    
+    @Environment(\.dismiss) var dismiss     
     var body: some View {
         VStack (alignment: .leading, spacing: 20) {
             Text("Create a new task")
+                .foregroundColor(.white)
+
                 .font(.title2).bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
             
@@ -27,6 +29,8 @@ struct AddTaskView: View {
                 Spacer()
                 Button(action: {
                     print("Task added!")
+                    dismiss()
+                    
                 }) {
                     Text("Add Task")
                         .font(.headline)
