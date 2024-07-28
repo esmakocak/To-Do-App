@@ -23,20 +23,23 @@ struct AddTaskView: View {
             
             
             // MARK: Add Task Button
-            Button(action: {
-                print("Task added!")
-            }) {
-                Text("Add Task")
-                    .font(.headline)
-                    .bold()
-                    .foregroundColor(.white)
-                    .padding()
-                    .padding(.horizontal)
-                    .background(
-                        LinearGradient(gradient: Gradient(colors: [Color("AccentColor"), Color("secondary")]), startPoint: .leading, endPoint: .trailing)
-                    )
-                    .cornerRadius(30)
-                    .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
+            HStack {
+                Spacer()
+                Button(action: {
+                    print("Task added!")
+                }) {
+                    Text("Add Task")
+                        .font(.headline)
+                        .bold()
+                        .foregroundColor(.white)
+                        .padding()
+                        .padding(.horizontal)
+                        .background(
+                            LinearGradient(gradient: Gradient(colors: [Color("AccentColor"), Color("secondary")]), startPoint: .leading, endPoint: .trailing)
+                        )
+                        .cornerRadius(30)
+                        .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
+                }
             }
             
             Spacer()
