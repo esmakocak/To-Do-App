@@ -39,7 +39,7 @@ class RealmManager: ObservableObject {
                 try localRealm.write {
                     // Creating a new Task
                     let newTask = Task(value: ["title": taskTitle, "completed": false])
-                   
+                    
                     // Adding newTask to localRealm
                     localRealm.add(newTask)
                     
@@ -71,4 +71,58 @@ class RealmManager: ObservableObject {
         }
     }
     
+    
+    // MARK: Update Func
+    //Function to update a task's completed state
+    func updateTask(id: ObjectId, completed: Bool) {
+        if let localRealm = localRealm {
+            do {
+                // Find the task we want to update by its id
+                let taskToUpdate = localRealm.objects(Task.self).filter(NSPredicate(format: "id == %@", id))
+                
+                // Make sure we found the task and taskToUpdate array isn't empty
+                guard !taskToUpdate.isEmpty else { return }
+                
+                // Trying to write to the localRealm
+                try localRealm.write {
+                    
+                    // Getting the first item of the array and changing its completed state
+                    taskToUpdate[0].completed = completed
+                    
+                    // Re-setting the tasks array
+                    getTasks()
+                    print("Updated task with id \(id)! Completed status: \(completed)")
+                }
+            } catch {
+                print("Error updating task \(id) to Realm: \(error)")
+            }
+        }
+    }
+    
+    
+    // MARK: Delete Func
+    func deleteTask(id: ObjectId) {
+        if let localRealm = localRealm {
+            do {
+                // Find the task we want to delete by its id
+                let taskToDelete = localRealm.objects(Task.self).filter(NSPredicate(format: "id == %@", id))
+                
+                // Make sure we found the task and taskToDelete array isn't empty
+                guard !taskToDelete.isEmpty else { return }
+                
+                // Trying to write to the localRealm
+                try localRealm.write {
+                    
+                    // Deleting the task
+                    localRealm.delete(taskToDelete)
+                    
+                    // Re-setting the tasks array
+                    getTasks()
+                    print("Deleted task with id \(id)")
+                }
+            } catch {
+                print("Error deleting task \(id) to Realm: \(error)")
+            }
+        }
+    }
 }
