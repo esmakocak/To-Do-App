@@ -10,9 +10,11 @@ import RealmSwift
 
 class RealmManager: ObservableObject {
     private(set) var localRealm: Realm?
+    @Published var tasks: [Task] = []
     
     init() {
         openRealm()
+        getTasks()
     }
     
     // Function to open a Realm - needed for saving data inside of the Realm
@@ -41,6 +43,8 @@ class RealmManager: ObservableObject {
                     // Adding newTask to localRealm
                     localRealm.add(newTask)
                     
+                    // Re-setting the tasks array
+                    getTasks()
                     print("Added new task to Realm!", newTask)
                 }
             } catch {
@@ -49,6 +53,22 @@ class RealmManager: ObservableObject {
         }
     }
     
-    
+    // MARK: Get Task Function
+    // to get all tasks from Realm and setting them in the tasks array
+    func getTasks() {
+        if let localRealm = localRealm {
+            
+            // Getting all objects from localRealm and sorting them by completed state
+            let allTasks = localRealm.objects(Task.self).sorted(byKeyPath: "completed")
+            
+            // Resetting the tasks array
+            tasks = []
+            
+            // Append each task to the tasks array
+            allTasks.forEach { task in
+                tasks.append(task)
+            }
+        }
+    }
     
 }
