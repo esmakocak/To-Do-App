@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4059A2322C56CD2F00350757 /* SmallAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059A2312C56CD2E00350757 /* SmallAddButton.swift */; };
-		4059A2352C56D6D000350757 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4059A2342C56D6D000350757 /* Realm */; };
-		4059A2372C56D6D000350757 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4059A2362C56D6D000350757 /* RealmSwift */; };
 		4059A2392C56D95A00350757 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059A2382C56D95A00350757 /* RealmManager.swift */; };
+		4059A23D2C56DCE300350757 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4059A23C2C56DCE300350757 /* RealmSwift */; };
 		4065CA7C2C56786C00957229 /* ToDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065CA7B2C56786C00957229 /* ToDoApp.swift */; };
 		4065CA7E2C56786C00957229 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065CA7D2C56786C00957229 /* ContentView.swift */; };
 		4065CA802C56786F00957229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4065CA7F2C56786F00957229 /* Assets.xcassets */; };
@@ -38,8 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4059A2372C56D6D000350757 /* RealmSwift in Frameworks */,
-				4059A2352C56D6D000350757 /* Realm in Frameworks */,
+				4059A23D2C56DCE300350757 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,8 +117,7 @@
 			);
 			name = ToDo;
 			packageProductDependencies = (
-				4059A2342C56D6D000350757 /* Realm */,
-				4059A2362C56D6D000350757 /* RealmSwift */,
+				4059A23C2C56DCE300350757 /* RealmSwift */,
 			);
 			productName = ToDo;
 			productReference = 4065CA782C56786C00957229 /* ToDo.app */;
@@ -406,12 +403,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4059A2342C56D6D000350757 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4059A2332C56D6D000350757 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		4059A2362C56D6D000350757 /* RealmSwift */ = {
+		4059A23C2C56DCE300350757 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4059A2332C56D6D000350757 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
