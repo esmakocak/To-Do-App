@@ -12,28 +12,24 @@ struct ContentView: View {
     @State private var showAddTaskView = false
     
     var body: some View {
-        
-        ZStack (alignment: .bottomTrailing) {
+        ZStack(alignment: .bottomTrailing) {
             TasksView()
-                .environmentObject(RealmManager())
+                .environmentObject(realmManager)
             
             SmallAddButton()
                 .padding()
-                .padding(.trailing)
                 .onTapGesture {
                     showAddTaskView.toggle()
                 }
         }
         .sheet(isPresented: $showAddTaskView) {
             AddTaskView()
-                .environmentObject(RealmManager())
-
+                .environmentObject(realmManager)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
         .background(Color("bg"))
     }
 }
-
 #Preview {
     ContentView()
         .preferredColorScheme(.dark)

@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct TaskRow: View {
     var task: String
     var completed: Bool
+    @EnvironmentObject var realmManager: RealmManager
+    var forDelete: ObjectId?
     
     var body: some View {
         HStack (spacing: 20) {
@@ -18,6 +21,18 @@ struct TaskRow: View {
                 .foregroundColor(completed ? Color("AccentColor") : Color("gr"))
             
             Text(task)
+            
+            Spacer()
+            
+            Image(systemName: "xmark")
+                .foregroundColor(Color("AccentColor"))
+                .onTapGesture {
+                    withAnimation(.easeInOut(duration: 0.3)){
+                        realmManager.deleteTask(id: forDelete!)
+                    }
+                    
+                }
+
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(30)
@@ -31,4 +46,5 @@ struct TaskRow: View {
 #Preview {
     TaskRow(task: "Do laundry", completed: true)
         .preferredColorScheme(.dark)
+        .environmentObject(RealmManager())
 }
